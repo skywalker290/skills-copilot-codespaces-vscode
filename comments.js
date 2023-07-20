@@ -1,19 +1,15 @@
-// create web server
-// Import required modules
-const http = require('http');
+// Create web server// 1. Load express module
+const express = require('express');
 
-// Define the hostname and port number for the server
-const hostname = '127.0.0.1'; // Change this to your desired hostname or IP address
-const port = 3000; // Change this to your desired port number
+// 2. Create an express application
+const app = express();
 
-// Create the web server using the 'http' module
-const server = http.createServer((req, res) => {
-  // Handle incoming requests here
-  res.statusCode = 200; // Status code for successful response
-  res.setHeader('Content-Type', 'text/plain'); // Set the content type of the response
-  res.end('Hello, World!'); // Response body, you can customize this message
+// 3. Define routes
+app.get('/', (req, res) => {
+    res.send('Hello World');
 });
-// Start the server and listen on the specified port and hostname
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+
+// 4. Start the server
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
 });

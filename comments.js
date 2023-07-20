@@ -13,7 +13,6 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain'); // Set the content type of the response
   res.end('Hello, World!'); // Response body, you can customize this message
 });
-
 // Start the server and listen on the specified port and hostname
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
